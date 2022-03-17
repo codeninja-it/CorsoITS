@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace secondaApplicazione
 {
@@ -18,6 +20,13 @@ namespace secondaApplicazione
 			// ricordati di costruire anche la lista dei contatti
 			// al suo interno
 			contatti = new List<Contatto>();
+		}
+
+		public void salva()
+		{
+			string buffer;
+			buffer = JsonConvert.SerializeObject(contatti);
+			File.WriteAllText("rubrica.json", buffer);
 		}
 	}
 }

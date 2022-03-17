@@ -22,6 +22,13 @@ namespace secondaApplicazione
 		public Contatto()
 		{
 			creazione = DateTime.Now;
+			nome = "";
+			cognome = "";
+			telefono = "";
+			email = "";
+			altezza = 0;
+			peso = 0;
+			maschio = true;
 		}
 	}
 }

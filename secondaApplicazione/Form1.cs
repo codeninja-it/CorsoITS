@@ -29,6 +29,7 @@ namespace secondaApplicazione
 			nuovoContatto.cognome = txtCognome.Text;
 			nuovoContatto.telefono = txtTelefono.Text;
 			mieiContatti.contatti.Add(nuovoContatto);
+			mieiContatti.salva();
 			MessageBox.Show("Contatto salvato!");
 		}
 	}
