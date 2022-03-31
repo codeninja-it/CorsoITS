@@ -58,8 +58,24 @@ namespace terzaApplicazione
 			if(editazione.DialogResult == DialogResult.OK)
 			{
 				indirizzi[daModificare] = editazione.inModifica;
+				lstIndirizzi.Items[daModificare] = editazione.inModifica.nome + " " + editazione.inModifica.cognome;
 				string buffer = JsonConvert.SerializeObject(indirizzi);
 				File.WriteAllText("rubrica.json", buffer);
+			}
+		}
+
+		private void lstIndirizzi_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnCancella_Click(object sender, EventArgs e)
+		{
+			foreach(int numero in lstIndirizzi.SelectedIndices)
+			{
+				indirizzi.RemoveAt(numero);
+				//lstIndirizzi.Items.RemoveAt(numero);
+				MessageBox.Show( numero.ToString() );
 			}
 		}
 	}
