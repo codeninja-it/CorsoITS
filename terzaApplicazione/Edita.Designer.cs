@@ -37,12 +37,16 @@ namespace terzaApplicazione
 			this.txtNome = new System.Windows.Forms.TextBox();
 			this.txtCognome = new System.Windows.Forms.TextBox();
 			this.txtTelefono = new System.Windows.Forms.TextBox();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtEmail = new System.Windows.Forms.TextBox();
+			this.datNascita = new System.Windows.Forms.DateTimePicker();
+			this.label5 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnAnnulla
 			// 
 			this.btnAnnulla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAnnulla.Location = new System.Drawing.Point(609, 121);
+			this.btnAnnulla.Location = new System.Drawing.Point(609, 208);
 			this.btnAnnulla.Name = "btnAnnulla";
 			this.btnAnnulla.Size = new System.Drawing.Size(94, 29);
 			this.btnAnnulla.TabIndex = 0;
@@ -53,7 +57,7 @@ namespace terzaApplicazione
 			// btnSalva
 			// 
 			this.btnSalva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSalva.Location = new System.Drawing.Point(509, 121);
+			this.btnSalva.Location = new System.Drawing.Point(509, 208);
 			this.btnSalva.Name = "btnSalva";
 			this.btnSalva.Size = new System.Drawing.Size(94, 29);
 			this.btnSalva.TabIndex = 1;
@@ -115,11 +119,51 @@ namespace terzaApplicazione
 			this.txtTelefono.Size = new System.Drawing.Size(587, 27);
 			this.txtTelefono.TabIndex = 7;
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(13, 118);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(66, 20);
+			this.label4.TabIndex = 8;
+			this.label4.Text = "Indirizzo";
+			// 
+			// txtEmail
+			// 
+			this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtEmail.Location = new System.Drawing.Point(116, 115);
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(587, 27);
+			this.txtEmail.TabIndex = 9;
+			// 
+			// datNascita
+			// 
+			this.datNascita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.datNascita.Location = new System.Drawing.Point(116, 149);
+			this.datNascita.Name = "datNascita";
+			this.datNascita.Size = new System.Drawing.Size(587, 27);
+			this.datNascita.TabIndex = 10;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(13, 154);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(94, 20);
+			this.label5.TabIndex = 11;
+			this.label5.Text = "Data Nascita";
+			// 
 			// Edita
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(715, 162);
+			this.ClientSize = new System.Drawing.Size(715, 249);
+			this.Controls.Add(this.label5);
+			this.Controls.Add(this.datNascita);
+			this.Controls.Add(this.txtEmail);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.txtTelefono);
 			this.Controls.Add(this.txtCognome);
 			this.Controls.Add(this.txtNome);
@@ -145,5 +189,9 @@ namespace terzaApplicazione
 		private System.Windows.Forms.TextBox txtNome;
 		private System.Windows.Forms.TextBox txtCognome;
 		private System.Windows.Forms.TextBox txtTelefono;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox txtEmail;
+		private System.Windows.Forms.DateTimePicker datNascita;
+		private System.Windows.Forms.Label label5;
 	}
 }

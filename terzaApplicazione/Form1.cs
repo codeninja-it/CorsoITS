@@ -26,24 +26,40 @@ namespace terzaApplicazione
 			Contatto nuovo = new Contatto();
 			Edita nuovaFinestra = new Edita(nuovo);
 			nuovaFinestra.ShowDialog();
-			indirizzi.Add(nuovaFinestra.inModifica);
-			lstIndirizzi.Items.Add( nuovaFinestra.inModifica.nome + " " + nuovaFinestra.inModifica.cognome  );
-			string buffer = JsonConvert.SerializeObject(indirizzi);
-			File.WriteAllText("rubrica.json", buffer);
+			if(nuovaFinestra.DialogResult == DialogResult.OK)
+			{
+				indirizzi.Add(nuovaFinestra.inModifica);
+				lstIndirizzi.Items.Add(nuovaFinestra.inModifica.nome + " " + nuovaFinestra.inModifica.cognome);
+				string buffer = JsonConvert.SerializeObject(indirizzi);
+				File.WriteAllText("rubrica.json", buffer);
+			}
+			
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			int contatore = 0;
-			int finoA = 100;
-			while(contatore < finoA)
+			if( File.Exists("rubrica.json"))
 			{
-				string contatto = "casella numero " + contatore.ToString("0.00");
-				lstIndirizzi.Items.Add(contatto);
-				contatore++;
-				Contatto primo = new Contatto();
-				primo.nome = "Daniele";
-				primo.cognome = "Simoncini";
+				string buffer = File.ReadAllText("rubrica.json");
+				indirizzi = JsonConvert.DeserializeObject<List<Contatto>>(buffer);
+				foreach (Contatto singolo in indirizzi)
+				{
+					lstIndirizzi.Items.Add(singolo.nome + " " + singolo.cognome);
+				}
+			}
+		}
+
+		private void lstIndirizzi_DoubleClick(object sender, EventArgs e)
+		{
+			int daModificare = lstIndirizzi.SelectedIndex;
+			Contatto elemento = indirizzi[daModificare];
+			Edita editazione = new Edita(elemento);
+			editazione.ShowDialog();
+			if(editazione.DialogResult == DialogResult.OK)
+			{
+				indirizzi[daModificare] = editazione.inModifica;
+				string buffer = JsonConvert.SerializeObject(indirizzi);
+				File.WriteAllText("rubrica.json", buffer);
 			}
 		}
 	}

@@ -42,13 +42,14 @@ namespace terzaApplicazione
 			this.lstIndirizzi.ItemHeight = 20;
 			this.lstIndirizzi.Location = new System.Drawing.Point(12, 12);
 			this.lstIndirizzi.Name = "lstIndirizzi";
-			this.lstIndirizzi.Size = new System.Drawing.Size(710, 304);
+			this.lstIndirizzi.Size = new System.Drawing.Size(347, 444);
 			this.lstIndirizzi.TabIndex = 0;
+			this.lstIndirizzi.DoubleClick += new System.EventHandler(this.lstIndirizzi_DoubleClick);
 			// 
 			// btnNuovo
 			// 
 			this.btnNuovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnNuovo.Location = new System.Drawing.Point(627, 346);
+			this.btnNuovo.Location = new System.Drawing.Point(264, 487);
 			this.btnNuovo.Name = "btnNuovo";
 			this.btnNuovo.Size = new System.Drawing.Size(94, 29);
 			this.btnNuovo.TabIndex = 1;
@@ -60,7 +61,7 @@ namespace terzaApplicazione
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(734, 387);
+			this.ClientSize = new System.Drawing.Size(371, 528);
 			this.Controls.Add(this.btnNuovo);
 			this.Controls.Add(this.lstIndirizzi);
 			this.Name = "Form1";

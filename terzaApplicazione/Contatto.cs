@@ -9,5 +9,7 @@ namespace terzaApplicazione
 		public string nome;
 		public string cognome;
 		public string telefono;
+		public string email;
+		public DateTime nascita;
 	}
 }
