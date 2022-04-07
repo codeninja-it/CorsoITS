@@ -11,5 +11,6 @@ namespace terzaApplicazione
 		public string telefono;
 		public string email;
 		public DateTime nascita;
+		public int idnegozio;
 	}
 }
