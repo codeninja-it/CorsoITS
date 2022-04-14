@@ -106,21 +106,21 @@ namespace terzaApplicazione
 			// mnuApri
 			// 
 			this.mnuApri.Name = "mnuApri";
-			this.mnuApri.Size = new System.Drawing.Size(224, 26);
+			this.mnuApri.Size = new System.Drawing.Size(127, 26);
 			this.mnuApri.Text = "Apri";
 			this.mnuApri.Click += new System.EventHandler(this.mnuApri_Click);
 			// 
 			// mnuSalva
 			// 
 			this.mnuSalva.Name = "mnuSalva";
-			this.mnuSalva.Size = new System.Drawing.Size(224, 26);
+			this.mnuSalva.Size = new System.Drawing.Size(127, 26);
 			this.mnuSalva.Text = "Salva";
 			this.mnuSalva.Click += new System.EventHandler(this.mnuSalva_Click);
 			// 
 			// mnuEsci
 			// 
 			this.mnuEsci.Name = "mnuEsci";
-			this.mnuEsci.Size = new System.Drawing.Size(224, 26);
+			this.mnuEsci.Size = new System.Drawing.Size(127, 26);
 			this.mnuEsci.Text = "Esci";
 			this.mnuEsci.Click += new System.EventHandler(this.mnuEsci_Click);
 			// 
@@ -135,8 +135,9 @@ namespace terzaApplicazione
 			// mnuNegozi
 			// 
 			this.mnuNegozi.Name = "mnuNegozi";
-			this.mnuNegozi.Size = new System.Drawing.Size(140, 26);
+			this.mnuNegozi.Size = new System.Drawing.Size(224, 26);
 			this.mnuNegozi.Text = "Negozi";
+			this.mnuNegozi.Click += new System.EventHandler(this.mnuNegozi_Click);
 			// 
 			// dlgApri
 			// 

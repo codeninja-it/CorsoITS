@@ -11,8 +11,9 @@ namespace terzaApplicazione
 	public partial class Edita : Form
 	{
 		public Contatto inModifica;
+		private Archivio archivio;
 
-		public Edita(Contatto passato)
+		public Edita(Contatto passato, Archivio archivio)
 		{
 			InitializeComponent();
 			inModifica = passato;
@@ -24,15 +25,25 @@ namespace terzaApplicazione
 			{
 				datNascita.Value = inModifica.nascita;
 			}
+			this.archivio = archivio;
+			foreach(Negozio singolo in this.archivio.negozi)
+			{
+				cmbNegozio.Items.Add(singolo.nome);
+			}
 		}
 
 		private void btnSalva_Click(object sender, EventArgs e)
 		{
-			inModifica.nome = txtNome.Text;
+			inModifica.nome	= txtNome.Text;
 			inModifica.cognome = txtCognome.Text;
 			inModifica.telefono = txtTelefono.Text;
 			inModifica.email = txtEmail.Text;
 			inModifica.nascita = datNascita.Value;
+			if (cmbNegozio.SelectedIndex != -1) {
+				int indiceSelezionato = cmbNegozio.SelectedIndex;
+				Negozio usato = archivio.negozi[indiceSelezionato];
+				inModifica.idnegozio = usato.idnegozio;
+			}
 			DialogResult = DialogResult.OK;
 			Close();
 		}
@@ -41,6 +52,11 @@ namespace terzaApplicazione
 		{
 			DialogResult = DialogResult.Cancel;
 			Close();
+		}
+
+		private void cmbNegozio_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }

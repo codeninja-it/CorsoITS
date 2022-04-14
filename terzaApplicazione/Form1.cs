@@ -27,14 +27,12 @@ namespace terzaApplicazione
 		private void btnNuovo_Click(object sender, EventArgs e)
 		{
 			Contatto nuovo = new Contatto();
-			Edita nuovaFinestra = new Edita(nuovo);
+			Edita nuovaFinestra = new Edita(nuovo, indirizzi);
 			nuovaFinestra.ShowDialog();
 			if(nuovaFinestra.DialogResult == DialogResult.OK)
 			{
 				indirizzi.contatti.Add(nuovaFinestra.inModifica);
 				lstIndirizzi.Items.Add(nuovaFinestra.inModifica.nome + " " + nuovaFinestra.inModifica.cognome);
-				string buffer = JsonConvert.SerializeObject(indirizzi);
-				File.WriteAllText(path, buffer);
 			}
 			
 		}
@@ -56,14 +54,12 @@ namespace terzaApplicazione
 		{
 			int daModificare = lstIndirizzi.SelectedIndex;
 			Contatto elemento = indirizzi.contatti[daModificare];
-			Edita editazione = new Edita(elemento);
+			Edita editazione = new Edita(elemento, indirizzi);
 			editazione.ShowDialog();
 			if(editazione.DialogResult == DialogResult.OK)
 			{
 				indirizzi.contatti[daModificare] = editazione.inModifica;
 				lstIndirizzi.Items[daModificare] = editazione.inModifica.nome + " " + editazione.inModifica.cognome;
-				string buffer = JsonConvert.SerializeObject(indirizzi);
-				File.WriteAllText(path, buffer);
 			}
 		}
 
@@ -110,6 +106,14 @@ namespace terzaApplicazione
 				string buffer = JsonConvert.SerializeObject(indirizzi);
 				File.WriteAllText(path, buffer);
 			}
+		}
+
+		private void mnuNegozi_Click(object sender, EventArgs e)
+		{
+			Negozi dlgNegozi = new Negozi();
+			dlgNegozi.archivio = indirizzi;
+			dlgNegozi.ShowDialog();
+			indirizzi = dlgNegozi.archivio;
 		}
 	}
 }

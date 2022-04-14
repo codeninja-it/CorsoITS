@@ -41,12 +41,14 @@ namespace terzaApplicazione
 			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.datNascita = new System.Windows.Forms.DateTimePicker();
 			this.label5 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.cmbNegozio = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// btnAnnulla
 			// 
 			this.btnAnnulla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnAnnulla.Location = new System.Drawing.Point(609, 208);
+			this.btnAnnulla.Location = new System.Drawing.Point(346, 273);
 			this.btnAnnulla.Name = "btnAnnulla";
 			this.btnAnnulla.Size = new System.Drawing.Size(94, 29);
 			this.btnAnnulla.TabIndex = 0;
@@ -57,7 +59,7 @@ namespace terzaApplicazione
 			// btnSalva
 			// 
 			this.btnSalva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnSalva.Location = new System.Drawing.Point(509, 208);
+			this.btnSalva.Location = new System.Drawing.Point(246, 273);
 			this.btnSalva.Name = "btnSalva";
 			this.btnSalva.Size = new System.Drawing.Size(94, 29);
 			this.btnSalva.TabIndex = 1;
@@ -98,7 +100,7 @@ namespace terzaApplicazione
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtNome.Location = new System.Drawing.Point(116, 13);
 			this.txtNome.Name = "txtNome";
-			this.txtNome.Size = new System.Drawing.Size(587, 27);
+			this.txtNome.Size = new System.Drawing.Size(324, 27);
 			this.txtNome.TabIndex = 5;
 			// 
 			// txtCognome
@@ -107,7 +109,7 @@ namespace terzaApplicazione
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtCognome.Location = new System.Drawing.Point(116, 47);
 			this.txtCognome.Name = "txtCognome";
-			this.txtCognome.Size = new System.Drawing.Size(587, 27);
+			this.txtCognome.Size = new System.Drawing.Size(324, 27);
 			this.txtCognome.TabIndex = 6;
 			// 
 			// txtTelefono
@@ -116,7 +118,7 @@ namespace terzaApplicazione
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtTelefono.Location = new System.Drawing.Point(116, 81);
 			this.txtTelefono.Name = "txtTelefono";
-			this.txtTelefono.Size = new System.Drawing.Size(587, 27);
+			this.txtTelefono.Size = new System.Drawing.Size(324, 27);
 			this.txtTelefono.TabIndex = 7;
 			// 
 			// label4
@@ -134,7 +136,7 @@ namespace terzaApplicazione
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtEmail.Location = new System.Drawing.Point(116, 115);
 			this.txtEmail.Name = "txtEmail";
-			this.txtEmail.Size = new System.Drawing.Size(587, 27);
+			this.txtEmail.Size = new System.Drawing.Size(324, 27);
 			this.txtEmail.TabIndex = 9;
 			// 
 			// datNascita
@@ -143,7 +145,7 @@ namespace terzaApplicazione
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.datNascita.Location = new System.Drawing.Point(116, 149);
 			this.datNascita.Name = "datNascita";
-			this.datNascita.Size = new System.Drawing.Size(587, 27);
+			this.datNascita.Size = new System.Drawing.Size(324, 27);
 			this.datNascita.TabIndex = 10;
 			// 
 			// label5
@@ -155,11 +157,34 @@ namespace terzaApplicazione
 			this.label5.TabIndex = 11;
 			this.label5.Text = "Data Nascita";
 			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(12, 184);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(66, 20);
+			this.label6.TabIndex = 12;
+			this.label6.Text = "Negozio";
+			// 
+			// cmbNegozio
+			// 
+			this.cmbNegozio.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.cmbNegozio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbNegozio.FormattingEnabled = true;
+			this.cmbNegozio.Location = new System.Drawing.Point(116, 184);
+			this.cmbNegozio.Name = "cmbNegozio";
+			this.cmbNegozio.Size = new System.Drawing.Size(324, 28);
+			this.cmbNegozio.TabIndex = 13;
+			this.cmbNegozio.SelectedIndexChanged += new System.EventHandler(this.cmbNegozio_SelectedIndexChanged);
+			// 
 			// Edita
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(715, 249);
+			this.ClientSize = new System.Drawing.Size(452, 314);
+			this.Controls.Add(this.cmbNegozio);
+			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.datNascita);
 			this.Controls.Add(this.txtEmail);
@@ -193,5 +218,7 @@ namespace terzaApplicazione
 		private System.Windows.Forms.TextBox txtEmail;
 		private System.Windows.Forms.DateTimePicker datNascita;
 		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.ComboBox cmbNegozio;
 	}
 }
