@@ -15,13 +15,11 @@ namespace terzaApplicazione
 	public partial class Form1 : Form
 	{
 		private Archivio indirizzi;
-		private String path;
 
 		public Form1()
 		{
 			InitializeComponent();
 			indirizzi = new Archivio();
-			path = "archivio.json";
 		}
 
 		private void btnNuovo_Click(object sender, EventArgs e)
@@ -39,9 +37,9 @@ namespace terzaApplicazione
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			if( File.Exists(path))
+			if( File.Exists(Properties.Settings.Default.ultimoFileLetto))
 			{
-				string buffer = File.ReadAllText(path);
+				string buffer = File.ReadAllText(Properties.Settings.Default.ultimoFileLetto);
 				indirizzi = JsonConvert.DeserializeObject<Archivio>(buffer);
 				foreach (Contatto singolo in indirizzi.contatti)
 				{
@@ -86,25 +84,27 @@ namespace terzaApplicazione
 
 		private void mnuApri_Click(object sender, EventArgs e)
 		{
-			dlgApri.FileName = path;
+			dlgApri.FileName = Properties.Settings.Default.ultimoFileLetto;
 			DialogResult risultato = dlgApri.ShowDialog();
 			if(risultato == DialogResult.OK)
 			{
-				path = dlgApri.FileName;
-				string buffer = File.ReadAllText(path);
+				Properties.Settings.Default.ultimoFileLetto = dlgApri.FileName;
+				Properties.Settings.Default.Save();
+				string buffer = File.ReadAllText(Properties.Settings.Default.ultimoFileLetto);
 				indirizzi = JsonConvert.DeserializeObject<Archivio>(buffer);
 			}
 		}
 
 		private void mnuSalva_Click(object sender, EventArgs e)
 		{
-			dlgSalva.FileName = path;
+			dlgSalva.FileName = Properties.Settings.Default.ultimoFileLetto;
 			DialogResult risultato = dlgSalva.ShowDialog();
 			if(risultato == DialogResult.OK)
 			{
-				path = dlgSalva.FileName;
+				Properties.Settings.Default.ultimoFileLetto = dlgSalva.FileName;
+				Properties.Settings.Default.Save();
 				string buffer = JsonConvert.SerializeObject(indirizzi);
-				File.WriteAllText(path, buffer);
+				File.WriteAllText(Properties.Settings.Default.ultimoFileLetto, buffer);
 			}
 		}
 

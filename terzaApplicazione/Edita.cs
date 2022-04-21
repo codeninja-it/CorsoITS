@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 
 namespace terzaApplicazione
 {
@@ -29,6 +31,12 @@ namespace terzaApplicazione
 			foreach(Negozio singolo in this.archivio.negozi)
 			{
 				cmbNegozio.Items.Add(singolo.nome);
+			}
+			Negozio usato = this.archivio.negozi.Where(x => x.idnegozio == inModifica.idnegozio).FirstOrDefault();
+			if(usato != null)
+			{
+				int indice = this.archivio.negozi.IndexOf(usato);
+				cmbNegozio.SelectedIndex = indice;
 			}
 		}
 
@@ -57,6 +65,11 @@ namespace terzaApplicazione
 		private void cmbNegozio_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			
+		}
+
+		private void Edita_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

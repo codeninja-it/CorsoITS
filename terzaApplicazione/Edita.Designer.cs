@@ -29,6 +29,7 @@ namespace terzaApplicazione
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edita));
 			this.btnAnnulla = new System.Windows.Forms.Button();
 			this.btnSalva = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
@@ -197,8 +198,10 @@ namespace terzaApplicazione
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnSalva);
 			this.Controls.Add(this.btnAnnulla);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Edita";
 			this.Text = "Edita";
+			this.Load += new System.EventHandler(this.Edita_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

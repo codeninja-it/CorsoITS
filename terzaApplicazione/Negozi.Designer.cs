@@ -29,6 +29,7 @@ namespace terzaApplicazione
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Negozi));
 			this.lstNegozi = new System.Windows.Forms.ListBox();
 			this.txtNome = new System.Windows.Forms.TextBox();
 			this.txtIndirizzo = new System.Windows.Forms.TextBox();
@@ -169,6 +170,7 @@ namespace terzaApplicazione
 			this.Controls.Add(this.txtIndirizzo);
 			this.Controls.Add(this.txtNome);
 			this.Controls.Add(this.lstNegozi);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Negozi";
 			this.Text = "Negozi";
 			this.Load += new System.EventHandler(this.Negozi_Load);
