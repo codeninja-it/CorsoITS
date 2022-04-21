@@ -29,6 +29,7 @@ namespace terzaApplicazione
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.lstIndirizzi = new System.Windows.Forms.ListBox();
 			this.btnNuovo = new System.Windows.Forms.Button();
 			this.btnCancella = new System.Windows.Forms.Button();
@@ -53,7 +54,7 @@ namespace terzaApplicazione
 			this.lstIndirizzi.ItemHeight = 20;
 			this.lstIndirizzi.Location = new System.Drawing.Point(12, 32);
 			this.lstIndirizzi.Name = "lstIndirizzi";
-			this.lstIndirizzi.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+			this.lstIndirizzi.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
 			this.lstIndirizzi.Size = new System.Drawing.Size(390, 364);
 			this.lstIndirizzi.TabIndex = 0;
 			this.lstIndirizzi.SelectedIndexChanged += new System.EventHandler(this.lstIndirizzi_SelectedIndexChanged);
@@ -135,7 +136,7 @@ namespace terzaApplicazione
 			// mnuNegozi
 			// 
 			this.mnuNegozi.Name = "mnuNegozi";
-			this.mnuNegozi.Size = new System.Drawing.Size(224, 26);
+			this.mnuNegozi.Size = new System.Drawing.Size(140, 26);
 			this.mnuNegozi.Text = "Negozi";
 			this.mnuNegozi.Click += new System.EventHandler(this.mnuNegozi_Click);
 			// 
@@ -157,9 +158,10 @@ namespace terzaApplicazione
 			this.Controls.Add(this.btnNuovo);
 			this.Controls.Add(this.lstIndirizzi);
 			this.Controls.Add(this.menuStrip1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "Archivio contatti";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();

@@ -4,10 +4,59 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Archivio contatti</AssemblyName>
+    <ApplicationIcon>Martz90-Circle-Contacts.ico</ApplicationIcon>
+    <Authors>Daniele Simoncini</Authors>
+    <Company>CodeNinja.it</Company>
+    <Description>Un bellissimo sistema di gestione dei contatti in rubriche separate e gestite in json</Description>
+    <Copyright>Aprile 2022</Copyright>
+    <PackageProjectUrl>https://www.codeninja.it</PackageProjectUrl>
+    <PackageIcon>Martz90-Circle-Contacts.ico</PackageIcon>
+    <PackageIconUrl />
+    <NeutralLanguage>it</NeutralLanguage>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Downloads\Martz90-Circle-Contacts.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

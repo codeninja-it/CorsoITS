@@ -11,7 +11,7 @@ namespace terzaApplicazione
 	public partial class Negozi : Form
 	{
 		// passato dall'utente
-		public Archivio archivio;
+		public Archivio archivio = new Archivio();
 
 		public Negozi()
 		{
