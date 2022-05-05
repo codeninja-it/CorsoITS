@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace DatiDaInternet
 {
@@ -44,12 +46,9 @@ namespace DatiDaInternet
 			MatchCollection trovati = Regex.Matches(buffer, pattern, opzioni);
 			foreach(Match singolo in trovati)
 			{
-				Libro nuovo = new Libro();
-				nuovo.ISBN = double.Parse(singolo.Groups[1].Value);
-				nuovo.Titolo = singolo.Groups[3].Value;
-				nuovo.Pagine = int.Parse(singolo.Groups[8].Value);
-				nuovo.Prezzo = int.Parse(singolo.Groups[7].Value)/100;
-				archivio.libri.Add(nuovo);
+				archivio.importaLibro(singolo.Groups);
+				archivio.importaAutori(singolo.Groups[2].Value);
+				archivio.abbinaAutori(singolo);
 			}
 
 			// UNIX
@@ -58,6 +57,9 @@ namespace DatiDaInternet
 			// \r	carriage return
 			// \t	tab
 			// \\	slash
+
+			string bufferJson = JsonConvert.SerializeObject(archivio);
+			File.WriteAllText("archivio.json", bufferJson);
 		}
 	}
 }
