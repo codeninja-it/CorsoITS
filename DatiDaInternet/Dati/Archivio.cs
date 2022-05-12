@@ -10,7 +10,7 @@ namespace DatiDaInternet
 	/// <summary>
 	/// Archivio dati dedicato ai libri
 	/// </summary>
-	class Archivio
+	public class Archivio
 	{
 		/// <summary>
 		/// collezione dei libri in archivio

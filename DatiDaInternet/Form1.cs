@@ -11,6 +11,9 @@ using System.Net.Http;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using System.IO;
+using Microsoft.Data.Sqlite;
+using DatiDaInternet.Dati;
+
 
 namespace DatiDaInternet
 {
@@ -60,6 +63,10 @@ namespace DatiDaInternet
 
 			string bufferJson = JsonConvert.SerializeObject(archivio);
 			File.WriteAllText("archivio.json", bufferJson);
+			// inzializziamo il convertitore
+			Json2db convertitore = new Json2db(archivio, "archivio.sqlite");
+			// e importiamo i dati nell'archivio
+			convertitore.importa();
 		}
 	}
 }

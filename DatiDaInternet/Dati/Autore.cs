@@ -7,7 +7,7 @@ namespace DatiDaInternet
 	/// <summary>
 	/// Classe descrittiva di un autore di libri
 	/// </summary>
-	class Autore
+	public class Autore
 	{
 		/// <summary>
 		/// idententificativo dell'autore, DEVE ESSERE UNIVOCO!!!
