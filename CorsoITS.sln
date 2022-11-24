@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "terzaApplicazione", "terzaA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatiDaInternet", "DatiDaInternet\DatiDaInternet.csproj", "{B3A032B6-1741-48B7-A6E1-0E4AE5B1EF11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pesoForma", "pesoForma\pesoForma.csproj", "{6CED8865-0C4C-4FA6-A332-282E4812AE15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pesoForma", "pesoForma\pesoForma.csproj", "{6CED8865-0C4C-4FA6-A332-282E4812AE15}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BMI", "BMI\BMI.csproj", "{7F084C45-6746-43B5-BABA-7C4E2D5E9312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chat", "chat\chat.csproj", "{460D43BA-B303-45F5-B0C0-071B5B95343A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{6CED8865-0C4C-4FA6-A332-282E4812AE15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CED8865-0C4C-4FA6-A332-282E4812AE15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CED8865-0C4C-4FA6-A332-282E4812AE15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F084C45-6746-43B5-BABA-7C4E2D5E9312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F084C45-6746-43B5-BABA-7C4E2D5E9312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F084C45-6746-43B5-BABA-7C4E2D5E9312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F084C45-6746-43B5-BABA-7C4E2D5E9312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

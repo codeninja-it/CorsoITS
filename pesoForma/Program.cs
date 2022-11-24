@@ -14,6 +14,17 @@ bmi = peso / (altezza * altezza);
 
 Console.WriteLine("il tuo BMI è " + bmi.ToString("N2")  );
 
+double valore = 12.365;
+string risultato = "";
+if (valore < 5)
+    risultato = "primo orizzonte";
+else if (valore < 10)
+    risultato = "secondo orizzonte";
+else if (valore < 11)
+    risultato = "terzo orizzonte";
+else
+    risultato = "quarto orizzonte";
+
 
 // funzione
 double recuperaParametro(string label, int profondita = 0)
