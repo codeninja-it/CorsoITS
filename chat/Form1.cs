@@ -1,3 +1,4 @@
+using System.Net;
 using System.Net.Sockets;
 
 namespace chat
@@ -8,6 +9,8 @@ namespace chat
         {
             InitializeComponent();
             processoParallelo.RunWorkerAsync();
+            string mioIndirizzo = Dns.GetHostName();
+            this.Text = $"Chat - {mioIndirizzo}";
         }
 
         private void btnInvia_Click(object sender, EventArgs e)
@@ -43,7 +46,8 @@ namespace chat
                 int ricevuti = 0;
                 while((ricevuti = linea.Read(buffer, 0, buffer.Length)) != 0){
                     string messaggio = System.Text.Encoding.ASCII.GetString(buffer, 0, ricevuti);
-                    Console.WriteLine(messaggio);
+                    Action inserisci = delegate { lstMessaggi.Items.Add(messaggio); };
+                    lstMessaggi.Invoke(inserisci);
                 }
 
                 telefono.Close();
