@@ -1,5 +1,7 @@
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace chat
 {
@@ -17,17 +19,24 @@ namespace chat
         {
             int numeroPorta = 4065;
             string destinatario = txtDestinatario.Text;
-            string messaggio = txtMessaggio.Text;
+            string messaggio = "||0";
             TcpClient client = new TcpClient();
             try
             {
                 client.Connect(destinatario, numeroPorta);
                 // sono in connessione con il mio server
                 NetworkStream linea = client.GetStream();
-                byte[] buffer = System.Text.Encoding.ASCII.GetBytes(messaggio);
+
+                // start reading from the socket
+                byte[] risposta = new byte[2048];
+                var tRisposta = linea.ReadAsync(risposta, 0, risposta.Length);
+
+                byte[] buffer = Encoding.ASCII.GetBytes(messaggio);
                 linea.Write(buffer, 0, buffer.Length);
+                
                 client.Close();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show($"{destinatario} non è attualmente online!", "Errore...", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -44,14 +53,31 @@ namespace chat
 
                 byte[] buffer = new byte[256];
                 int ricevuti = 0;
-                while((ricevuti = linea.Read(buffer, 0, buffer.Length)) != 0){
-                    string messaggio = System.Text.Encoding.ASCII.GetString(buffer, 0, ricevuti);
+                while ((ricevuti = linea.Read(buffer, 0, buffer.Length)) != 0)
+                {
+                    string messaggio = Encoding.ASCII.GetString(buffer, 0, ricevuti);
                     Action inserisci = delegate { lstMessaggi.Items.Add(messaggio); };
                     lstMessaggi.Invoke(inserisci);
                 }
-
-                telefono.Close();
+                buffer = Encoding.ASCII.GetBytes("1|3.6|PROTOCOL VERSION||");
+                linea.Write(buffer, 0, buffer.Length);
+                //telefono.Close();
             }
+        }
+
+        private void txtDestinatario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstMessaggi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

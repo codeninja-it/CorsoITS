@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pesoForma", "pesoForma\peso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BMI", "BMI\BMI.csproj", "{7F084C45-6746-43B5-BABA-7C4E2D5E9312}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "chat", "chat\chat.csproj", "{460D43BA-B303-45F5-B0C0-071B5B95343A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "chat", "chat\chat.csproj", "{460D43BA-B303-45F5-B0C0-071B5B95343A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delectron", "Delectron\Delectron.csproj", "{ECEAE402-7ECD-4DCA-A70D-771E2ABF18FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{460D43BA-B303-45F5-B0C0-071B5B95343A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECEAE402-7ECD-4DCA-A70D-771E2ABF18FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEAE402-7ECD-4DCA-A70D-771E2ABF18FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEAE402-7ECD-4DCA-A70D-771E2ABF18FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEAE402-7ECD-4DCA-A70D-771E2ABF18FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
